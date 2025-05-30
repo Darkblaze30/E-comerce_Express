@@ -1,0 +1,29 @@
+{
+  "name": "e-comerce-express",
+  "version": "1.0.0",
+  "description": "E-comerce_Express",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --quiet app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darkblaze30/E-comerce_Express.git"
+  },
+  "keywords": [
+    "Express",
+    "E-comerce"
+  ],
+  "author": "Darkblaze30",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Darkblaze30/E-comerce_Express/issues"
+  },
+  "homepage": "https://github.com/Darkblaze30/E-comerce_Express#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
