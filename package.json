@@ -1,9 +1,7 @@
 {
-  "name": "e-comerce-express",
+  "name": "e-comerce_express",
   "version": "1.0.0",
-  "description": "E-comerce_Express",
-  "main": "index.js",
-  "type": "module",
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon --quiet app.js"
   },
@@ -12,18 +10,23 @@
     "url": "git+https://github.com/Darkblaze30/E-comerce_Express.git"
   },
   "keywords": [
-    "Express",
-    "E-comerce"
+    "Mongoose",
+    "express"
   ],
-  "author": "Darkblaze30",
+  "author": "Darkblaze30 Kiloa121",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Darkblaze30/E-comerce_Express/issues"
   },
   "homepage": "https://github.com/Darkblaze30/E-comerce_Express#readme",
-  "dependencies": {
+  "description": "",
+    "devDependencies": {
     "dotenv": "^16.5.0",
-    "express": "^5.1.0",
     "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "mongoose": "^8.15.1"
   }
 }
