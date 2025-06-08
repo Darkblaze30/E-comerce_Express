@@ -24,22 +24,41 @@ const validator = [
     .exists()
     .isString()
     .isLength({ min: 3 })
-    .withMessage("no se ingreso un codigo o el codigo ingresado no es valido"),
+    .withMessage("no se ingreso un codigo valido"),
   body("name")
     .exists()
     .isString()
     .isLength({ min: 2 })
-    .withMessage("no se ingreso un nombre o el nombre ingresado no es valido"),
-  body("name")
+    .withMessage("no se ingreso un nombre valido"),
+  body("description")
     .exists()
     .isString()
-    .isLength({ min: 2 })
-    .withMessage("no se ingreso un nombre o el nombre ingresado no es valido"),
-  body("name")
+    .isLength()
+    .withMessage("no se ingreso una descripcion valida"),
+  body("image")
+    .exists()
+    .isURL()
+    .withMessage("no se ingreso un Url valido"), 
+  body("price")
+    .exists()
+    .isNumeric()
+    .withMessage("no se ingreso un precio valido"), 
+  body("stock")
+    .exists()
+    .isNumeric()
+    .withMessage("no se ingreso un numero valido"), 
+  body("condition")
     .exists()
     .isString()
-    .isLength({ min: 2 })
-    .withMessage("no se ingreso un nombre o el nombre ingresado no es valido"), 
+    .withMessage("no se ingreso una condicion valida"), 
+  body("vat")
+    .exists()
+    .isString()
+    .withMessage("no se ingreso un vat valido"), 
+  body("categoryId")
+    .exists()
+    .isMongoId()
+    .withMessage("no se ingreso un id de alguna categoria"), 
 ];
 
 const Products = createCollection('products', productSchema)
