@@ -1,14 +1,13 @@
 export default class ProductDto {
     constructor(data){
+        this.code = data.code,
         this.name = data.name,
-        this.email = data.email,
-        this.password = data.password,
-        this.document_type = data.document_type,
-        this.document_number = data.document_number,
-        this.phone = data.phone,
-        this.place = data.place,
-        this.user_type = data.user_type,
-        this.register_date = data.register_date,
-        this.active = data.active
+        this.description = data.description,
+        this.image = data.image,
+        this.price = data.price,
+        this.stock = data.stock,
+        this.condition = data.condition,
+        this.vat = data.vat,
+        this.categoryId = data.categoryId
     }
 }
