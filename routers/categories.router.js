@@ -15,16 +15,16 @@ const categorySchema = new mongoose.Schema({
 
 const validator = [
   body("code")
-    .exists()
-    .isString()
-    .isLength({ min: 3 })
-    .withMessage("no se ingreso un codigo o el codigo ingresado no es valido"),
+    .exists().withMessage("El código es obligatorio")
+    .isString().withMessage("El código debe ser texto")
+    .isLength({ min: 3 }).withMessage("El código debe tener al menos 3 caracteres"),
+
   body("name")
-    .exists()
-    .isString()
-    .isLength({ min: 2 })
-    .withMessage("no se ingreso un nombre o el nombre ingresado no es valido"),
+    .exists().withMessage("El nombre es obligatorio")
+    .isString().withMessage("El nombre debe ser texto")
+    .isLength({ min: 2 }).withMessage("El nombre debe tener al menos 2 caracteres"),
 ];
+
 
 const Categories = createCollection('categories', categorySchema)
 

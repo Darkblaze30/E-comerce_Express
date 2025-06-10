@@ -19,53 +19,50 @@ const userSchema = new mongoose.Schema({
     registeredDate:Date,
     place:Object
 })
-
 const validator = [
   body("firstName")
-    .exists()
-    .isString()
-    .isLength({ min: 3 })
-    .withMessage("no se ingreso un nombre"),
+    .exists().withMessage("El nombre es obligatorio")
+    .isString().withMessage("El nombre debe ser texto")
+    .isLength({ min: 3 }).withMessage("El nombre debe tener al menos 3 caracteres"),
+
   body("lastName")
-    .exists()
-    .isString()
-    .isLength({ min: 3 })
-    .withMessage("no se ingreso un apellido"),
+    .exists().withMessage("El apellido es obligatorio")
+    .isString().withMessage("El apellido debe ser texto")
+    .isLength({ min: 3 }).withMessage("El apellido debe tener al menos 3 caracteres"),
+
   body("identificationNumber")
-    .exists()
-    .isNumeric()
-    .isLength({ min: 3 })
-    .withMessage("no se ingreso un numero de identificacion"),
+    .exists().withMessage("El número de identificación es obligatorio")
+    .isString().withMessage("El número de identificación debe ser texto")
+    .isLength({ min: 3 }).withMessage("El número de identificación debe tener al menos 3 caracteres"),
+
   body("identificationType")
-    .exists()
-    .isMongoId()
-    .isLength({ min: 3 })
-    .withMessage("no se ingreso el tipo de identificacion"),
+    .exists().withMessage("El tipo de identificación es obligatorio")
+    .isIn(['CC, TI']).withMessage("El tipo de identificación debe ser CC o TI"),
+
   body("email")
-    .exists()
-    .isEmail()
-    .isLength({ min: 3 })
-    .withMessage("no se ingreso un correo"),
+    .exists().withMessage("El correo es obligatorio")
+    .isEmail().withMessage("El correo debe tener un formato válido"),
+
   body("phone")
-    .exists()
-    .isNumeric()
-    .isLength({ min: 3 })
-    .withMessage("no se ingreso un telefono"),
+    .exists().withMessage("El teléfono es obligatorio")
+    .isString().withMessage("El teléfono debe ser texto")
+    .isLength({ min: 3 }).withMessage("El teléfono debe tener al menos 3 caracteres"),
+
   body("password")
-    .exists()
-    .isString()
-    .isLength({ min: 3 })
-    .withMessage("no se ingreso una clave"),
+    .exists().withMessage("La clave es obligatoria")
+    .isString().withMessage("La clave debe ser texto")
+    .isLength({ min: 3 }).withMessage("La clave debe tener al menos 3 caracteres"),
+
   body("userType")
-    .exists()
-    .isString()
-    .isLength({ min: 3 })
-    .withMessage("no se ingreso un tipo de usuario"),
+    .exists().withMessage("El tipo de usuario es obligatorio")
+    .isString().withMessage("El tipo de usuario debe ser texto")
+    .isIn(['C', 'S']).withMessage("El tipo de usuario debe ser C o S"),
+
   body("registeredDate")
-    .exists()
-    .isDate()
-    .withMessage("no se ingreso un registro ")
+    .exists().withMessage("La fecha de registro es obligatoria")
+    .isISO8601().withMessage("La fecha de registro debe ser una fecha válida"),
 ];
+
 
 const users = createCollection('users', userSchema)
 
