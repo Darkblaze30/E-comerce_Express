@@ -1,6 +1,6 @@
 import express from 'express'
 import 'dotenv/config'
-import categoriesRouter from './routers/categories.router.js'
+import {categoriesRouter, paymentMethodRouter, productRouter, salesRouter, userRouter} from './routers/index.js'
 import bodyParser from 'body-parser'
 
 
@@ -11,11 +11,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(`${import.meta.dirname}/public`))
 
-app.get('/', function(req, res) {
-    res.send('informacion')
-})
-
 app.use('/categories', categoriesRouter)
+app.use('/paymentMethod', paymentMethodRouter)
+app.use('/product', productRouter)
+app.use('/sales', salesRouter)
+app.use('/user', userRouter)
 
 app.use((req,res) => {
     res.status(404).send('No se encontro la pagina')

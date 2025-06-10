@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { createCollection } from "./main.js";
+import { createCollection } from "./connection.js";
 import express from 'express'
 import { validationResult , body } from "express-validator";
 import userDto from "../Dto/user.dto.js";
@@ -37,7 +37,7 @@ const validator = [
 
   body("identificationType")
     .exists().withMessage("El tipo de identificación es obligatorio")
-    .isIn(['CC, TI']).withMessage("El tipo de identificación debe ser CC o TI"),
+    .isIn(['CC','TI']).withMessage("El tipo de identificación debe ser CC o TI"),
 
   body("email")
     .exists().withMessage("El correo es obligatorio")
@@ -58,6 +58,7 @@ const validator = [
     .isString().withMessage("El tipo de usuario debe ser texto")
     .isIn(['C', 'S']).withMessage("El tipo de usuario debe ser C o S"),
 
+    //Formato Iso YYYY-MM-DD
   body("registeredDate")
     .exists().withMessage("La fecha de registro es obligatoria")
     .isISO8601().withMessage("La fecha de registro debe ser una fecha válida"),

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { createCollection } from "./main.js";
+import { createCollection } from "./connection.js";
 import express from 'express'
 import { validationResult , body } from "express-validator";
 import ProductDto from "../Dto/product.dto.js";
@@ -15,7 +15,7 @@ const productSchema = new mongoose.Schema({
         price: Number,
         stock: Number,
         condition: String,
-        vat: Number,
+        vat: String,
         categoryId: String
 })
 

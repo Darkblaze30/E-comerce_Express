@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
-import { createCollection } from "./main.js";
+import { createCollection } from "./connection.js";
 import express from 'express'
 import Category_PaymentMetodDto from '../Dto/categories_paymentMethod.dto.js';
 import { validationResult , body } from "express-validator";
 
 
-const categoriesRouter = express.Router()
+const paymentMethodRouter = express.Router()
 
-const categorySchema = new mongoose.Schema({
+const paymentMethodSchema = new mongoose.Schema({
     code: String,
     name: String,
     active: Boolean
@@ -25,43 +25,43 @@ const validator = [
     .isLength({ min: 2 }).withMessage("El nombre debe tener al menos 2 caracteres"),
 ];
 
-const Categories = createCollection('categories', categorySchema)
+const PaymentMethod = createCollection('paymentMethod', paymentMethodSchema)
 
 
- categoriesRouter.get('/', (req,res) => {
-        Categories.find({})
+ paymentMethodRouter.get('/', (req,res) => {
+        PaymentMethod.find({})
         .then(data => res.send(data))
         .catch(err => res.send(err))
     })
 
-     categoriesRouter.get('/:_id', (req,res) => {
-        Categories.find(req.params)
+     paymentMethodRouter.get('/:_id', (req,res) => {
+        PaymentMethod.find(req.params)
         .then(data => res.send(data))
         .catch(err => res.send(err))
     })
 
-    categoriesRouter.post('/',validator, (req,res) =>{
+    paymentMethodRouter.post('/',validator, (req,res) =>{
         const error = validationResult(req)
         if (!error.isEmpty()){
             res.status(400).send(error)
             return
         }
-        Categories.insertOne({...(new Category_PaymentMetodDto(req.body)), active: true})
+        PaymentMethod.insertOne({...(new Category_PaymentMetodDto(req.body)), active: true})
         .then(data => res.send(data))
         .catch(err => res.send(err))
     })
 
-    categoriesRouter.put('/:_id', (req,res) => {
-        Categories.updateOne(req.params,{$set: req.body})
+    paymentMethodRouter.put('/:_id', (req,res) => {
+        PaymentMethod.updateOne(req.params,{$set: req.body})
         .then(data => res.send(data))
         .catch(error => res.send(error))
     })
 
-    categoriesRouter.delete('/:_id', (req,res) => {
-        Categories.deleteOne(req.params)
+    paymentMethodRouter.delete('/:_id', (req,res) => {
+        PaymentMethod.deleteOne(req.params)
         .then(data => res.send(data))
         .catch(err => res.send(err))
     })
 
 
-export default categoriesRouter
+export default paymentMethodRouter

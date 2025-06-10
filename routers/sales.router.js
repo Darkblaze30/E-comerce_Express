@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { createCollection } from "./main.js";
+import { createCollection } from "./connection.js";
 import express from 'express'
 import { validationResult , body } from "express-validator";
 import SalesDto from "../Dto/sales.dto.js";
