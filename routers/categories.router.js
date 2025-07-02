@@ -1,6 +1,6 @@
 import express from 'express'
 import {getAll, getById, insertOne, updateOne, deleteOne} from '../controllers/categories.controller.js'
-import { validator } from '../validators/category.validator.js'
+import { validator } from '../validators/basic.validator.js'
 
 const categoriesRouter = express.Router()
 

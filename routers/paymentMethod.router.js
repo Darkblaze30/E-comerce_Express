@@ -1,6 +1,6 @@
 import express from 'express'
 import { getAll, getById, insertOne, updateOne, deleteOne } from '../controllers/payment.controller.js'
-import { validator } from '../validators/pyment.validator.js'
+import { validator } from '../validators/basic.validator.js'
 
 const paymentMethodRouter = express.Router()
 

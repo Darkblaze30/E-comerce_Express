@@ -13,7 +13,7 @@ app.use(express.static(`${import.meta.dirname}/public`))
 
 app.use('/categories', categoriesRouter)
 app.use('/paymentMethod', paymentMethodRouter)
-app.use('/product', productRouter)
+app.use('/products', productRouter)
 app.use('/sales', salesRouter)
 app.use('/user', userRouter)
 
