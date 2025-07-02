@@ -15,7 +15,7 @@ app.use('/categories', categoriesRouter)
 app.use('/paymentMethod', paymentMethodRouter)
 app.use('/products', productRouter)
 app.use('/sales', salesRouter)
-app.use('/user', userRouter)
+app.use('/users', userRouter)
 
 app.use((req,res) => {
     res.status(404).send('No se encontro la pagina')
