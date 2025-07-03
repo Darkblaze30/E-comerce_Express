@@ -1,0 +1,131 @@
+.cart-container {
+    width: 100%;
+    background-color: #e8e8e8;
+}
+
+.header {
+    width: 100%;
+    background-color: #e74c3c;
+    color: white;
+    padding: 6px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: none;
+    outline: none;
+    color: black;
+    background: transparent;
+    width: 200px;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 1rem;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.header-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.cart-icon {
+    font-size: 1.2rem;
+}
+
+.cart-title {
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.cart-icon-large {
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+.cart-items {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-img {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.cart-details {
+    flex: 1;
+}
+
+.cart-details h3 {
+    margin-bottom: 8px;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+.pay-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
