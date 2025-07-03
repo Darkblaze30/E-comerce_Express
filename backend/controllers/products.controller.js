@@ -8,7 +8,7 @@ export const getAll = (req, res) => {
         .catch(err => res.send(err))
 }
 export const getById = (req, res) => {
-    productModel.find(req.params)
+    productModel.findOne(req.params)
         .then(data => res.send(data))
         .catch(err => res.send(err))
 }

@@ -20,6 +20,10 @@ class HomeView extends React.Component {
     }
   }
 
+  handleProductClick = (id) => {
+    this.props.navigate(`/product?id=${id}`);
+  };
+
   render() {
     return (
       <div className="home-container">
@@ -33,7 +37,7 @@ class HomeView extends React.Component {
           </div>
 
           <div className="header-links">
-            <a href="#">Login</a>
+            <a href="/login">Login</a>
             <a href="#">My Account</a>
             <span className="cart-icon">🛒</span>
           </div>
@@ -49,9 +53,19 @@ class HomeView extends React.Component {
         <section className="product-grid ">
             {this.state.products && this.state.products.map(product => {
                 return(
-                    <div className='product-card'>
-                        <div className="product-img"><img src={product.image} alt="" /></div>
-                    </div>
+                       <div
+        className="product-card"
+        key={product._id}
+         onClick={() => this.handleProductClick(product._id)}
+        style={{ cursor: 'pointer' }}
+      >
+  <div className="product-img">
+    <img src={product.image} alt={product.name} />
+  </div>
+  <div className="product-name">{product.name}</div>
+  <div className="product-price">${product.price}</div>
+</div>
+
                 )
             })}
 
