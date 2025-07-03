@@ -1,0 +1,144 @@
+.product-container {
+    width: 100%;
+    background-color: #e8e8e8;
+}
+
+.header {
+    width: 100%;
+    background-color: #e74c3c;
+    color: white;
+    padding: 6px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: none;
+    outline: none;
+    color: white;
+    background: transparent;
+    width: 200px;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    color: #00aced;
+    font-size: 1rem;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.header-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.cart-icon {
+    font-size: 1.2rem;
+}
+
+.product-main {
+    display: flex;
+    text-align: center;
+    padding: 90px 110px;
+    gap: 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.product-image {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-description {
+    flex: 1;
+    min-width: 250px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.product-description h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.product-actions {
+    width: 200px;
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.price {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.buy-btn,
+.cart-btn {
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #e74c3c;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.related-products {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 60px;
+    background-color: #e8e8e8;
+    border-top: 1px solid #ccc;
+}
+
+.related-item {
+    width: 220px;
+    height: 220px;
+    background-color: white;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
