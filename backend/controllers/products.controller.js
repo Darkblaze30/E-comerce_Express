@@ -3,7 +3,7 @@ import { validationResult } from "express-validator";
 import productModel from '../models/products.model.js';
 
 export const getAll = (req, res) => {
-    productModel.find({active: true})
+    productModel.find()
         .then(data => res.send(data))
         .catch(err => res.send(err))
 }

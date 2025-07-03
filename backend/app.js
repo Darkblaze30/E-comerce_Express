@@ -2,9 +2,16 @@ import express from 'express'
 import 'dotenv/config'
 import {categoriesRouter, paymentMethodRouter, productRouter, salesRouter, userRouter} from './routers/index.js'
 import bodyParser from 'body-parser'
-
+import cors from 'cors'
 
 const app = express()
+const corsOptions = {
+  origin: 'http://localhost:5173', // o el dominio de tu frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true, // si usas cookies/autenticación
+};
+
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

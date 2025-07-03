@@ -21,11 +21,12 @@
   },
   "homepage": "https://github.com/Darkblaze30/E-comerce_Express#readme",
   "description": "",
-    "devDependencies": {
+  "devDependencies": {
     "dotenv": "^16.5.0",
     "nodemon": "^3.1.10"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "express-validator": "^7.2.1",
     "mongoose": "^8.15.1"
